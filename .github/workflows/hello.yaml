@@ -19,6 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo Github Variable
+        if: ${{ runner.os == 'Linux' }}
         env:
           APP_VERSION: "2.34.5"
           RUNNER_CONTEXT: ${{ toJson(runner) }}
@@ -30,7 +31,7 @@ jobs:
           echo "$RUNNER_CONTEXT"
           echo "The Database password is ${{ secrets.DB_PASSWORD }}"
   hello-job:
-    if: ${{ github.event.client_payload != 'completed' }}
+    if: ${{ github.event.client_payload.status != 'completed' }}
     runs-on: ubuntu-latest
     steps:
       - name: Run a one-line script
