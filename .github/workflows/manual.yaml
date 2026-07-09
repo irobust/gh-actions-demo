@@ -14,6 +14,8 @@ on:
         type: boolean
         default: false
 jobs:
+  run-shared-job:
+    uses: ./.github/workflows/integration-test.yml
   build:
     runs-on: ubuntu-latest
     outputs:
