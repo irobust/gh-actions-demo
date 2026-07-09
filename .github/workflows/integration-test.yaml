@@ -1,0 +1,8 @@
+on:
+  workflow_call:
+jobs:
+  integration-test:
+    runs-on: ubuntu-slim
+    steps:
+      - run: echo "Run integration testing tools"
+    
