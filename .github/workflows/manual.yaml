@@ -15,7 +15,7 @@ on:
         default: false
 jobs:
   run-shared-job:
-    uses: ./.github/workflows/integration-test.yml
+    uses: ./.github/workflows/integration-test.yaml
   build:
     runs-on: ubuntu-latest
     outputs:
